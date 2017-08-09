@@ -44,7 +44,7 @@ $(window).click(function(e) {
 function motion(event){
 
     var rotation = (event.alpha) * 2 * PI / 360;
-    alert("alpha + "event.alpha + "rotation "+  rotation);
+    alert("alpha "+ event.alpha + "rotation "+  rotation);
     var v = createVector(0, 1);
     v.rotate(-rotation);
     world.setGravity(v);
