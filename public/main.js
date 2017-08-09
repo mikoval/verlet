@@ -63,6 +63,7 @@ function motion(event){
 
     var v = createVector(0, 1);
     v.rotate(-deg);
+    alert(e.)
     alert(e.accelerationIncludingGravity.x + ", " + e.accelerationIncludingGravity.y);
     world.setGravity(v);
 
@@ -71,9 +72,6 @@ function motion(event){
 
 
 
-window.addEventListener('deviceorientation',motion);
-window.addEventListener("devicemotion", function(){
-    $(window).trigger("deviceorientation");
-}, true);
+window.addEventListener("devicemotion", motion);
 
 
