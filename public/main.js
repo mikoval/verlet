@@ -46,7 +46,7 @@ function motion(event){
     var rotation = (event.alpha) * 2 * PI / 360;
 
     var v = createVector(0, 1);
-    v.rotate(rotation);
+    v.rotate(-rotation);
     world.setGravity(v);
 
   
