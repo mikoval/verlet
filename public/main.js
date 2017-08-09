@@ -33,6 +33,8 @@ function draw(){
 	world.draw();
 }
 function click(event){
+    alert("click");
+    alert(event.clientX)
     var x = event.clientX;
     var y = event.clientY;
     var r = Math.random()*20+ 10;
