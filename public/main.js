@@ -19,6 +19,7 @@ function setup() {
     width = document.body.clientWidth;
     height = document.body.clientHeight;
     accuracy = 5;
+
     
 }
 function draw(){
@@ -40,19 +41,19 @@ $(window).click(function(e) {
   
 });
 
-alert("starting")
 function motion(event){
     if(startOrientation == undefined )
         startOrientation = event.alpha;
+    var rotation = (event.alpha- startOrientation) * 2 * PI / 360;
+    alert("alpha: " + event.alpha + " rotation: "+ rotation);
 
-    var rotation = (event.alpha- startOrientation)  * (2 * PI) / 360 
     var v = createVector(0, 1);
     v.rotate(rotation);
-    alert(v.x + " " + v.y);
     world.setGravity(v);
 
   
 }
+
 
 
 window.addEventListener('deviceorientation',motion);

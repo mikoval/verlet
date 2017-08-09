@@ -47,6 +47,7 @@ function verletWorld(){
 		}
 	}
 	this.setGravity = function(dir){
+		console.log(dir)
 		for(var i = 0; i < this.objects.length; i++){
 			this.objects[i].setGravity(dir);
 		}
@@ -124,7 +125,8 @@ function verletPoint(x, y, bounce = 0.9, friction = 1.0, radius = 0, gravity = {
 		this.x += this.gravity.x;
 		
 	}
-	this.setGravity = function(){
+	this.setGravity = function(gravity){
+		console.log(gravity)
 		this.gravity = gravity;
 	}
 	this.constrain = function(){
