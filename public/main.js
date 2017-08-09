@@ -43,29 +43,7 @@ $(window).click(function(e) {
 
 function motion(event){
 
-    
-    var x = event.beta;  // In degree in the range [-180,180], x, 'front to back'
-    var y = event.gamma; // In degree in the range [-90,90], y, 'left to right'
-    var z = event.alpha; // 0-360, z, compass orientation
-
-    // coord 1: 0,0
-    // coord 2: x,y
-    // calculate the angle
-    var rad = Math.atan2(y, x);
-    var deg = rad * (180 / Math.PI);
-
-    // take into account if phone is held sideways / in landscape mode
-    var screenOrientation = screen.orientation || screen.mozOrientation || screen.msOrientation;
-    // 90, -90, or 0
-    var angle = screenOrientation.angle || window.orientation || 0; 
-
-    deg = deg + angle; 
-
-    var v = createVector(0, 1);
-    v.rotate(-deg);
-
-    alert(event.accelerationIncludingGravity.x + ", " + event.accelerationIncludingGravity.y);
-    world.setGravity(v);
+    world.setGravity(-event.accelerationIncludingGravity.x/10, event.accelerationIncludingGravity.y/10);
 
   
 }
