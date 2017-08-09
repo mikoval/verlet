@@ -45,7 +45,6 @@ function motion(event){
     if(startOrientation == undefined )
         startOrientation = event.alpha;
     var rotation = (event.alpha- startOrientation) * 2 * PI / 360;
-    alert("alpha: " + event.alpha + " rotation: "+ rotation);
 
     var v = createVector(0, 1);
     v.rotate(rotation);
