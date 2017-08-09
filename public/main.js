@@ -33,10 +33,18 @@ function draw(){
 	world.draw();
 }
 function click(event){
-    alert("click");
-    alert(event.clientX)
     var x = event.clientX;
     var y = event.clientY;
+    var r = Math.random()*20+ 10;
+    var circle = new verletPoint(x, y, 0.7, 0.99, r);
+    world.add(circle);
+  
+};
+function touch(event){
+    var touch = event.touches[0];
+    var x = touch.pageX;
+    var y = touch.pageY;
+
     var r = Math.random()*20+ 10;
     var circle = new verletPoint(x, y, 0.7, 0.99, r);
     world.add(circle);
@@ -53,7 +61,9 @@ function motion(event){
 
 
 $(window).on("devicemotion", motion);
-$(window).on("click touchstart", click);
+$(window).on("click", click);
+$(window).on("touchstart", touch);
+
 //$(window).on("touch", click);
 
 window.addEventListener("devicemotion", motion);
