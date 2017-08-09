@@ -62,7 +62,7 @@ function motion(event){
     deg = deg + angle; 
 
     var v = createVector(0, 1);
-    v.rotate(deg);
+    v.rotate(-deg);
     world.setGravity(v);
 
   
