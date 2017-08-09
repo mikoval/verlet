@@ -141,8 +141,8 @@ function verletPoint(x, y, bounce = 0.9, friction = 1.0, radius = 0, gravity = {
 			this.x = 0 + this.radius;
 			this.xOld = this.x + vx * this.bounce;
 		}
-		if(this.y + this.radius> height){
-			this.y = height - this.radius;
+		if(this.y + this.radius> height -5){
+			this.y = height - this.radius -5;
 			this.yOld = this.y + vy * this.bounce;
 
 		}
@@ -153,6 +153,7 @@ function verletPoint(x, y, bounce = 0.9, friction = 1.0, radius = 0, gravity = {
 		
 	}
 	this.draw = function(){
+		noStroke();
 		ellipse(this.x, this.y, this.radius*2, this.radius*2);
 	}
 }
