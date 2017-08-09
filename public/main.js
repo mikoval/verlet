@@ -54,7 +54,7 @@ function touch(event){
 function motion(event){
     if(event.accelerationIncludingGravity == null)
         return;
-    world.setGravity({x:-event.accelerationIncludingGravity.x/10, y: event.accelerationIncludingGravity.y/10});
+    world.setGravity({x:event.accelerationIncludingGravity.x/10, y: -event.accelerationIncludingGravity.y/10});
 
   
 }
