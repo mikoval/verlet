@@ -42,7 +42,8 @@ $(window).click(function(e) {
 });
 
 function motion(event){
-
+    if(event.accelerationIncludingGravity.x == null)
+        return;
     world.setGravity({x:-event.accelerationIncludingGravity.x/10, y: event.accelerationIncludingGravity.y/10});
 
   
