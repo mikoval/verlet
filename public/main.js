@@ -63,7 +63,7 @@ function motion(event){
 
     var v = createVector(0, 1);
     v.rotate(-deg);
-    alert(x + ', ' + y + ', '  + z);
+    alert(e.accelerationIncludingGravity.x + ", " + e.accelerationIncludingGravity.y);
     world.setGravity(v);
 
   
