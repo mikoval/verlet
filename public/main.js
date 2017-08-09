@@ -42,9 +42,8 @@ $(window).click(function(e) {
 });
 
 function motion(event){
-    if(startOrientation == undefined )
-        startOrientation = event.alpha;
-    var rotation = (event.alpha- startOrientation) * 2 * PI / 360;
+
+    var rotation = (event.alpha) * 2 * PI / 360;
 
     var v = createVector(0, 1);
     v.rotate(rotation);
