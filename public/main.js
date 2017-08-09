@@ -32,17 +32,17 @@ function draw(){
     
 	world.draw();
 }
-$(window).click(function(e) {
-    var x = e.clientX;
-    var y = e.clientY;
+function click(event){
+    var x = event.clientX;
+    var y = event.clientY;
     var r = Math.random()*20+ 10;
     var circle = new verletPoint(x, y, 0.7, 0.99, r);
     world.add(circle);
   
-});
+};
 
 function motion(event){
-    if(event.accelerationIncludingGravity.x == null)
+    if(event.accelerationIncludingGravity == null)
         return;
     world.setGravity({x:-event.accelerationIncludingGravity.x/10, y: event.accelerationIncludingGravity.y/10});
 
@@ -50,6 +50,9 @@ function motion(event){
 }
 
 
+$(window).on("devicemotion", motion);
+$(window).on("click", click);
+$(window).on("tap", click);
 
 window.addEventListener("devicemotion", motion);
 
