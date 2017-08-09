@@ -43,6 +43,7 @@ $(window).click(function(e) {
 
 function motion(event){
 
+    
     var x = event.beta;  // In degree in the range [-180,180], x, 'front to back'
     var y = event.gamma; // In degree in the range [-90,90], y, 'left to right'
     var z = event.alpha; // 0-360, z, compass orientation
@@ -59,7 +60,10 @@ function motion(event){
     var angle = screenOrientation.angle || window.orientation || 0; 
 
     deg = deg + angle; 
-    alert(deg);
+
+    var v = createVector(0, 1);
+    v.rotate(deg);
+    world.setGravity(v);
 
   
 }
