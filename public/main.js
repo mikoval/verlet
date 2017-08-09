@@ -51,8 +51,8 @@ function motion(event){
 
 
 $(window).on("devicemotion", motion);
-$(window).on("click", click);
-$(window).on("tap", click);
+$(window).on("click touchstart", click);
+//$(window).on("touch", click);
 
 window.addEventListener("devicemotion", motion);
 
